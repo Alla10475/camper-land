@@ -1,0 +1,66 @@
+:root {
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 16px;
+
+  --main: #101828;
+  --button: #E44848;
+  --button-hover: #d84343;
+  --text: #475467;
+  --rating: #FFC531;
+  --inputs: #F7F7F7;
+  --block-features: #F2F4F7;
+}
+
+#root {
+  width: 100%;
+}
+
+body {
+  color: var(--main);
+ font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+/* input {
+  margin: 0;
+  padding: 0;
+} */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border-radius: 200px;
+  border: 1px solid transparent;
+  /* padding: 0.6em 1.2em; */
+  font-size: 16px;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--button);
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: #fff;
+}
+
+.catalogContainer {
+  display: flex;
+  gap: 64px;
+}

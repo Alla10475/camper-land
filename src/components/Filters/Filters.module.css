@@ -1,0 +1,57 @@
+.input {
+  width: 360px;
+  height: 56px;
+  background-color: var(--inputs);
+  border-radius: 10px;
+  padding: 18px 18px 18px 44px;
+  outline: none;
+  border: none;
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(16, 24, 40, 0.6);
+  margin-bottom: 8px;
+}
+
+.locationIcon {
+    position: absolute;
+    left: 110px;
+    top: 170px;
+  fill: transparent;
+  stroke: rgba(16, 24, 40, 0.6);
+}
+
+.filterPanel {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 34px;
+}
+
+.variantWrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* width: 360px; */
+    border-top: 1px solid rgba(16, 24, 40, 0.1);
+    padding-top: 12px;
+}
+
+.filterType {
+font-weight: 600;
+font-size: 20px;
+line-height: 1.2;
+margin-bottom: 12px;
+}
+
+.text {
+font-weight: 500;
+line-height: 1.5;
+color: var(--text);
+margin-bottom: 14px;
+}
