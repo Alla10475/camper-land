@@ -4,9 +4,6 @@ import css from "./Filters.module.css";
 import sprite from "../../assets/icons.svg";
 import FilterCard from "../FilterCard/FilterCard";
 
-// const equipment = ["AC", "automatic", "kitchen", "TV", "shower"];
-// const type = ["panelTruck", "fullyIntegrated", "alcove"];
-
 const Filters = ({ onSubmit }) => {
   const [query, setQuery] = useState(" ");
 
@@ -48,7 +45,7 @@ const Filters = ({ onSubmit }) => {
               name="icon-AC"
               width={32}
               height={33}
-              left="40px"
+              left="39px"
               right="40px"
             />
             <FilterCard
@@ -75,7 +72,7 @@ const Filters = ({ onSubmit }) => {
               name="icon-tv"
               width={32}
               height={33}
-              left="40px"
+              left="39px"
               right="40px"
             />
             <FilterCard

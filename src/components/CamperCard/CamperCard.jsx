@@ -4,12 +4,11 @@ import { useState } from "react";
 import css from "./CamperCard.module.css";
 import sprite from "../../assets/icons.svg";
 import clsx from "clsx";
-import Button from "../Button/Button";
 import Modal from "../Modal/Modal";
 
 const CamperCard = ({ camper }) => {
 
-  const [modalCamper, setModalCamper] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
     
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.campers.favorites);
@@ -23,8 +22,12 @@ const CamperCard = ({ camper }) => {
     }
   };
 
-  const handleShowMore = (camper) => {
-    setModalCamper(camper);
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleShowMore = () => {
+    setIsModalOpen(true);
   };
 
   return (
@@ -57,7 +60,7 @@ const CamperCard = ({ camper }) => {
           </p>
 
           <p>
-            <svg className={clsx(css.icon)} width={18} height={20}>
+            <svg className={clsx(css.icon, css.iconLocation)} width={18} height={20}>
               <use href={`${sprite}#icon-location`}></use>
             </svg>
             {camper.location}
@@ -66,17 +69,15 @@ const CamperCard = ({ camper }) => {
 
         <div className={css.description}>{camper.description}</div>
         <div className={css.categoriesWrapper}></div>
-        <Button
-          onClick={() => handleShowMore(camper)}
+        <button className={css.showMoreBtn}
+          onClick={handleShowMore}
           type="button"
-          variant="showMore"
+          
         >
           Show more
-        </Button>
+        </button>
       </div>
-      {modalCamper && 
-        <Modal camper={camper} />
-      }
+      {isModalOpen && <Modal camper={camper} onClose={handleCloseModal} />}
     </div>
   );
 };

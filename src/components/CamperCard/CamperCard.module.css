@@ -12,7 +12,6 @@
   width: 290px;
   height: 310px;
   object-fit: cover;
-  /* object-position: center; */
   border-radius: 10px;
   width: 290px;
   height: 310px;
@@ -20,7 +19,6 @@
 
 .titleWrap {
   display: flex;
-  /* justify-content: space-between; */
   margin-bottom: 8px;
 }
 
@@ -38,6 +36,7 @@
 }
 
 .description {
+  margin: 24px 0;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -52,12 +51,14 @@
 .icon.star {
   stroke: var(--rating);
   fill: var(--rating);
+  margin-right: 4px;
 }
 
 .rating {
   text-decoration: underline;
   text-decoration-skip-ink: none;
   line-height: 1.5;
+  margin-right: 24px;
 }
 
 .favoriteBtn {
@@ -79,5 +80,19 @@
 .categoriesWrapper {
 width: 526px;
 height: 96px;
-border: 1px solid black;
+margin-bottom: 24px;
+}
+
+.showMoreBtn {
+  padding: 16px 40px;
+  margin-top: auto;
+}
+
+.showMoreBtn:hover, 
+.showMoreBtn:focus {
+  background-color: var(--button-hover);
+}
+
+iconLocation {
+  margin-right: 4px;
 }

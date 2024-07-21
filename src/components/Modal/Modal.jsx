@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import css from "./Modal.module.css";
 import sprite from "../../assets/icons.svg";
 // import FeaturesList from "../FeaturesList/FeaturesList";
@@ -17,18 +17,18 @@ const Modal = ({ onClose, camper }) => {
     }
   };
 
-  // const handleDocumentKeyDown = (event) => {
-  //   if (event.key === "Escape") {
-  //     onClose();
-  //   }
-  // };
+  const handleDocumentKeyDown = (event) => {
+    if (event.key === "Escape") {
+      onClose();
+    }
+  };
 
-  // useEffect(() => {
-  //   document.addEventListener("keydown", handleDocumentKeyDown);
-  //   return () => {
-  //     document.removeEventListener("keydown", handleDocumentKeyDown);
-  //   };
-  // }, [onClose]);
+  useEffect(() => {
+    document.addEventListener("keydown", handleDocumentKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleDocumentKeyDown);
+    };
+  }, [onClose]);
 
   return (
     <div className={css.backdrop} onClick={handleClickOutside}>
@@ -74,7 +74,7 @@ const Modal = ({ onClose, camper }) => {
                 <p>{camper.location}</p>
               </div>
             </div>
-            <h3 className={css.title}>{`$${camper.price},00`}</h3>
+            <h3 className={css.title}>&euro;{camper.price}</h3>
           </div>
         </div>
         <div className={css.scrollable}>

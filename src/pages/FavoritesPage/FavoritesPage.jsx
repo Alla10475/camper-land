@@ -6,7 +6,6 @@ import { selectFavorites } from "../../redux/campers/selectors";
 
 export const FavoritesPage = () => {
   const campers = useSelector(selectFavorites);
-  // const navigate = useNavigate();
   return (
     <CampersList campers={campers} />
   )

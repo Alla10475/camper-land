@@ -1,36 +1,45 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchCampers } from "./operations";
+import { getInitialFavorites, updateFavorites } from "./helpers";
+
+const initialFavorites = getInitialFavorites();
 
 const campersSlice = createSlice({
   name: "campers",
   initialState: {
     items: [],
-    favorites: [],
-    status: "idle",
+    // favorites: [],
+    favorites: initialFavorites ? JSON.parse(initialFavorites) : [],
+    // status: "idle",
     loading: false,
     error: null,
   },
   reducers: {
     addFavorite: (state, action) => {
-      state.favorites.push(action.payload);
+      const camperId = action.payload;
+      state.favorites.push(camperId);
+      updateFavorites(state.favorites);
     },
     removeFavorite: (state, action) => {
+      const camperId = action.payload;
       state.favorites = state.favorites.filter(
-        (item) => item.id !== action.payload.id
+        (id) => id !== camperId
       );
+      updateFavorites(state.favorites);
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCampers.pending, (state) => {
-        state.status = "loading";
+        state.loading = true;
       })
       .addCase(fetchCampers.fulfilled, (state, action) => {
-        state.status = "succeeded";
+        state.loading = false;
+        state.error = null;
         state.items = action.payload;
       })
       .addCase(fetchCampers.rejected, (state, action) => {
-        state.status = "failed";
+        state.loading = false;
         state.error = action.payload;
       });
   },

@@ -10,9 +10,12 @@
 
 .modal {
   background-color: #fff;
+  border-radius: 20px;
+  padding: 40px;
   width: 982px;
+  height: 720px;
   max-height: calc(100vh - 80px);
-
+  font-size: 14px;
   display: flex;
   flex-direction: column;
   margin: 40px auto;
@@ -101,14 +104,14 @@
 }
 
 .description {
-  color: var(--primary-light);
+  color: var(--text);
   text-align: left;
   padding-bottom: 44px;
 }
 
 .icon {
   fill: transparent;
-  stroke: var(--primary);
+  stroke: var(--main);
 }
 
 .star {
@@ -134,12 +137,21 @@
   text-align: left;
 }
 
-.features {
+/* .features {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   height: 96px;
   overflow-y: auto;
+  width: 100%;
+} */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 430px;
+  height: fit-content;
+  padding-bottom: 44px;
 }
 
 .tabContainer {
@@ -159,7 +171,7 @@
   right: 0;
   bottom: -26px;
   height: 4px;
-  background-color: var(--accent-1);
+  background-color: var(--button);
 }
 
 .separator {
@@ -168,46 +180,8 @@
   background-color: rgba(16, 24, 40, 0.2);
 }
 
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  width: 430px;
-  height: fit-content;
-  padding-bottom: 44px;
-}
-
 .featuresContainer {
   display: flex;
   gap: 24px;
   padding: 32px 0;
-}
-
-@media screen and (max-width: 1024px) {
-  .modal {
-    width: 90%;
-  }
-
-  .featuresContainer {
-    flex-direction: column;
-  }
-
-  .features {
-    width: 100%;
-  }
-
-  .imgContainer {
-    width: 30%;
-    height: 200px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .modal {
-    font-size: 14px;
-  }
-
-  .detail {
-    font-size: 14px;
-  }
 }
