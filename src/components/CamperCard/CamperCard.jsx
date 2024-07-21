@@ -4,10 +4,12 @@ import { useState } from "react";
 import css from "./CamperCard.module.css";
 import sprite from "../../assets/icons.svg";
 import clsx from "clsx";
+// import Button from "../Button/Button";
 import Modal from "../Modal/Modal";
 
 const CamperCard = ({ camper }) => {
 
+  // const [modalCamper, setModalCamper] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
     
   const dispatch = useDispatch();
@@ -26,6 +28,9 @@ const CamperCard = ({ camper }) => {
     setIsModalOpen(false);
   };
 
+  // const handleShowMore = (camper) => {
+  //   setModalCamper(camper);
+  // };
   const handleShowMore = () => {
     setIsModalOpen(true);
   };
